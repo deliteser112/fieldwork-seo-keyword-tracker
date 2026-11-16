@@ -1,0 +1,24 @@
+# Local agent tooling and runtime state never belong in the submission.
+.agents/
+.claude/
+.gsd/
+.gsd-worktrees/
+.gsd-backups/
+.gsd-id
+.mcp.json
+.bg-shell/
+skills-lock.json
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+.cache/

@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+}
+model User {
+  id           String    @id @default(uuid()) @db.Uuid
+  email        String    @unique
+  passwordHash String
+  sessions     Session[]
+  clients      Client[]
+  createdAt    DateTime  @default(now()) @db.Timestamptz(3)
+}
+model Session {
+  id        String   @id @default(uuid()) @db.Uuid
+  tokenHash String   @unique
+  userId    String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  @@index([userId])
+  @@index([expiresAt])
+}
+model Client {
+  id         String   @id @default(uuid()) @db.Uuid
+  ownerId    String   @db.Uuid
+  owner      User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name       String
+  websiteUrl String
+  createdAt  DateTime @default(now()) @db.Timestamptz(3)
+  pages      Page[]
+  crawl      CrawlJob?
+  @@unique([ownerId, websiteUrl])
+  @@index([ownerId, id])
+}
+
+model Page {
+  id String @id @default(uuid()) @db.Uuid
+  clientId String @db.Uuid
+  client Client @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  url String
+  title String
+  ruleVersion String
+  crawledAt DateTime @default(now()) @db.Timestamptz(3)
+  keywords Keyword[]
+  issues SeoIssue[]
+  @@unique([clientId, url])
+  @@index([clientId, id])
+}
+model Keyword {
+  id String @id @default(uuid()) @db.Uuid
+  pageId String @db.Uuid
+  page Page @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  term String
+  score Float
+  evidence String
+  snapshots RankSnapshot[]
+  @@unique([pageId, term])
+  @@index([term])
+}
+model SeoIssue {
+  id String @id @default(uuid()) @db.Uuid
+  pageId String @db.Uuid
+  page Page @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  code String
+  advisory Boolean
+  evidence String
+  @@unique([pageId, code])
+}
+model RankSnapshot {
+  keywordId String @db.Uuid
+  keyword Keyword @relation(fields: [keywordId], references: [id], onDelete: Cascade)
+  capturedAt DateTime @db.Timestamptz(3)
+  position Int
+  @@id([keywordId, capturedAt])
+}
+model CrawlJob {
+  id String @id @default(uuid()) @db.Uuid
+  clientId String @unique @db.Uuid
+  client Client @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  state String @default("queued")
+  attempt Int @default(0)
+  claimToken String? @db.Uuid
+  leaseUntil DateTime? @db.Timestamptz(3)
+  availableAt DateTime @default(now()) @db.Timestamptz(3)
+  error String?
+  retryable Boolean @default(false)
+  selectionComplete Boolean @default(false)
+  checkpoints CrawlPage[]
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  @@index([state, availableAt])
+}
+model CrawlPage {
+  id String @id @default(uuid()) @db.Uuid
+  jobId String @db.Uuid
+  job CrawlJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  ordinal Int
+  url String
+  sourceSitemap String
+  state String @default("pending")
+  error String?
+  retryable Boolean @default(false)
+  @@unique([jobId, ordinal])
+  @@unique([jobId, url])
+}

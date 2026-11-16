@@ -1,0 +1,45 @@
+{
+  "name": "agency-keyword-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "setup:local": "node scripts/setup-local.mjs",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "eslint apps scripts e2e",
+    "test": "node scripts/database.mjs test",
+    "db:generate": "node scripts/database.mjs generate",
+    "db:migrate": "node scripts/database.mjs migrate deploy",
+    "dev:api": "node --env-file=.env apps/api/dist/src/main.js",
+    "dev:web": "npm run dev -w apps/web",
+    "test:e2e": "node scripts/database.mjs browser",
+    "acceptance:live": "npm run build -w apps/api && node apps/api/dist/src/live.js",
+    "seed": "npm run build -w apps/api && node scripts/database.mjs seed",
+    "worker": "node scripts/database.mjs worker",
+    "benchmark": "npm run build -w apps/api && node scripts/database.mjs benchmark",
+    "test:delivery": "node --test scripts/delivery.test.mjs",
+    "test:runtime": "node --test scripts/runtime.test.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "typescript-eslint": "^8.46.0",
+    "typescript": "^5.9.3",
+    "@types/node": "^22.18.0",
+    "dotenv": "^17.2.3",
+    "@playwright/test": "^1.56.1",
+    "@axe-core/playwright": "^4.11.0",
+    "semver": "^7.8.6"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.1"
+    }
+  }
+}

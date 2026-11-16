@@ -1,0 +1,15 @@
+.git
+.gsd*
+.agents
+.claude
+.mcp.json
+.bg-shell
+.env
+.env.*
+node_modules
+**/node_modules
+**/dist
+coverage
+test-results
+playwright-report
+*.pdf

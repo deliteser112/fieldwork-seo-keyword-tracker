@@ -1,0 +1,230 @@
+{
+  "baseline": "a7e9372ef51ef7aa72d4c444fe50cbccca6c938f",
+  "implementation": "79044bfcc777dfab4c4201a908e7d728e4821a23",
+  "findings": [
+    {
+      "id": "F1",
+      "red": "Encoded canonical login aliases return 401 past attempt 10 instead of 429",
+      "regression": "apps/api/test/access.test.ts",
+      "green": true
+    },
+    {
+      "id": "F2",
+      "red": "Earlier eligible sibling sitemap URLs are dropped",
+      "regression": "apps/api/test/crawler.test.ts",
+      "green": true
+    },
+    {
+      "id": "F3",
+      "red": "Escaped URL remains encoded and malformed loc truncates later entries",
+      "regression": "apps/api/test/crawler.test.ts",
+      "green": true
+    },
+    {
+      "id": "F4",
+      "red": "Fallback HTTP_404 replaces retryable DNS_TIMEOUT",
+      "regression": "apps/api/test/crawler.test.ts",
+      "green": true
+    },
+    {
+      "id": "F8",
+      "red": "Adjacent blocks invent fused keyword tokens",
+      "regression": "apps/api/test/crawler.test.ts",
+      "green": true
+    },
+    {
+      "id": "F5",
+      "red": "Cancellation, redirect deadline, robots delay and lost-lease assertions fail",
+      "regression": "apps/api/test/lifecycle.test.ts",
+      "green": true
+    },
+    {
+      "id": "F7",
+      "red": "Exhausted successful/partial jobs incorrectly report failed",
+      "regression": "apps/api/test/tracker.test.ts",
+      "green": true
+    },
+    {
+      "id": "F9",
+      "red": "Logout alert absent outside Clients",
+      "regression": "e2e/sprint.spec.ts",
+      "green": true
+    },
+    {
+      "id": "F10",
+      "red": "Retry leaves POST count at one",
+      "regression": "e2e/sprint.spec.ts",
+      "green": true
+    },
+    {
+      "id": "F11",
+      "red": "Persisted search displayed as empty after navigation",
+      "regression": "e2e/sprint.spec.ts",
+      "green": true
+    },
+    {
+      "id": "F12",
+      "red": "Invalid timestamps remove the application root",
+      "regression": "e2e/sprint.spec.ts",
+      "green": true
+    },
+    {
+      "id": "F13",
+      "red": "Browser HTML contains /@vite/client",
+      "regression": "e2e/sprint.spec.ts",
+      "green": true
+    },
+    {
+      "id": "F14",
+      "red": "Declared engine range is not subset of locked engine ranges",
+      "regression": "scripts/delivery.test.mjs",
+      "green": true
+    },
+    {
+      "id": "F15",
+      "red": "Minimatch is older than 11.0.1; runtime resolves TypeScript",
+      "regression": "scripts/delivery.test.mjs; scripts/runtime.test.mjs",
+      "green": true
+    }
+  ],
+  "checks": {
+    "backend": {
+      "passed": 40,
+      "failed": 0
+    },
+    "browserProduction": {
+      "passed": 30,
+      "failed": 0,
+      "projects": [
+        "desktop Chromium",
+        "mobile Chromium"
+      ]
+    },
+    "delivery": {
+      "passed": 2,
+      "minimumNode": "22.19.0",
+      "localNode": "24.13.0"
+    },
+    "runtime": {
+      "passed": 1,
+      "absent": [
+        "prisma",
+        "typescript",
+        "typescript-eslint",
+        "eslint",
+        "vite",
+        "@playwright/test"
+      ],
+      "loads": [
+        "@prisma/client",
+        "argon2",
+        "undici"
+      ],
+      "sizeBytes": 102224154,
+      "baselineSizeBytes": 313120548,
+      "image": "sha256:6353e29c3d78f4a7abd6f432f2d7bff2434d211759d954de582d11517baf5e3c"
+    },
+    "advisories": {
+      "beforeModerate": 7,
+      "afterAll": 0
+    },
+    "typecheck": "pass",
+    "lint": "pass",
+    "productionBuild": "pass",
+    "frontendJsBytes": 327027,
+    "freshClone": {
+      "commit": "79044bf",
+      "install": "npm ci passed",
+      "typecheck": "passed",
+      "lint": "passed",
+      "backendPassed": 40,
+      "productionBrowserPassed": 30,
+      "deliveryPassed": 2,
+      "runtimePassed": 1,
+      "nginxConfig": "passed",
+      "newDatabaseVolume": true,
+      "ports": {
+        "web": 15174,
+        "postgres": 55440
+      }
+    },
+    "mainApplication": {
+      "url": "http://localhost:5188",
+      "healthy": true,
+      "fingerprintsUnchangedAcrossUpdate": true,
+      "counts": {
+        "users": 2,
+        "clients": 3,
+        "pages": 45,
+        "keywords": 225,
+        "snapshots": 54750,
+        "pageIdentity": "9f9eb4088b65e0ae5d30abd345033e44",
+        "keywordIdentity": "dd276027e2a1b8fd0593dcd0c8b53721",
+        "rankValues": "651a6ff4111cd0b9109b7a375668f98e"
+      }
+    },
+    "secretScan": {
+      "trackedFilesScanned": 73,
+      "privateKeyOrCloudTokenMarkers": [],
+      "envTracked": false,
+      "scope": "Targeted tracked-text scan; not an exhaustive secret-history audit."
+    },
+    "realDataScreenshots": "Desktop and mobile history layouts inspected; automated zero axe violations, JavaScript errors and horizontal overflow.",
+    "benchmark": {
+      "snapshots": 191625,
+      "users": 5,
+      "warmupSeconds": 30,
+      "results": [
+        {
+          "scenario": "pages-list",
+          "requests": 31593,
+          "errors": 0,
+          "p95Ms": 14.580667000001995,
+          "durationSeconds": 60.018485041,
+          "pass": true
+        },
+        {
+          "scenario": "url-search",
+          "requests": 3999,
+          "errors": 0,
+          "p95Ms": 238.85362499998882,
+          "durationSeconds": 60.039617958,
+          "pass": true
+        },
+        {
+          "scenario": "keyword-search",
+          "requests": 9526,
+          "errors": 0,
+          "p95Ms": 76.9032920000027,
+          "durationSeconds": 60.01609512499999,
+          "pass": true
+        },
+        {
+          "scenario": "90-day-history",
+          "requests": 15570,
+          "errors": 0,
+          "p95Ms": 27.934542000002693,
+          "durationSeconds": 60.01052308300004,
+          "pass": true
+        }
+      ],
+      "observedSearchLatencyIncreaseVsPriorRun": true
+    }
+  },
+  "commits": {
+    "batch1": "0e67c7f",
+    "batch2": "ad30ef8",
+    "batch3": "848c957",
+    "batch4": "62ca3f8",
+    "batch5": "79044bf"
+  },
+  "deferred": [
+    "F6: discovery prefetches documents before checkpointing; 0/0 progress and repeated downloads remain possible."
+  ],
+  "remaining": [
+    "F6 deferred incremental discovery/checkpointing",
+    "Historical analyses retain original rule versions",
+    "Search p95 increased versus historical run, within 500 ms target; causal A/B not established",
+    "Hosted GitHub Actions not run; all configured commands verified locally"
+  ]
+}

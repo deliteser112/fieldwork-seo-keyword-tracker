@@ -1,0 +1,33 @@
+{
+  "name": "@tracker/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/helmet": "^13.0.2",
+    "@fastify/rate-limit": "^10.3.0",
+    "@js-temporal/polyfill": "^0.5.1",
+    "@nestjs/common": "^11.1.0",
+    "@nestjs/core": "^11.1.0",
+    "@nestjs/platform-fastify": "^11.1.0",
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "argon2": "^0.44.0",
+    "cheerio": "^1.2.0",
+    "fast-xml-parser": "^5.12.1",
+    "ipaddr.js": "^2.5.0",
+    "reflect-metadata": "^0.2.2",
+    "robots-parser": "^3.0.1",
+    "rxjs": "^7.8.2",
+    "undici": "^8.12.4",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.10.1"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "api": {
+    "owners": 2,
+    "pagesPerOwner": 15,
+    "crossOwnerDenial": true,
+    "csrfDenial": true,
+    "history": true
+  },
+  "browser": [
+    {
+      "device": "desktop",
+      "pages": 15,
+      "history": true,
+      "accessibilityViolations": 0,
+      "javascriptErrors": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "device": "mobile",
+      "pages": 15,
+      "history": true,
+      "accessibilityViolations": 0,
+      "javascriptErrors": 0,
+      "horizontalOverflow": false
+    }
+  ]
+}

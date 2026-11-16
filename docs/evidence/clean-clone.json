@@ -1,0 +1,66 @@
+{
+  "verifiedOn": "2026-11-16",
+  "branch": "milestone/M001",
+  "runtimeRevision": "c25f210",
+  "setup": [
+    "npm ci",
+    "npm run setup:local",
+    "npm run db:generate",
+    "docker compose -p fieldwork-review up --build -d --wait",
+    "npm run seed"
+  ],
+  "isolation": {
+    "composeProject": "fieldwork-review",
+    "webPort": 15174,
+    "postgresPort": 55440,
+    "originalDatabaseReset": false
+  },
+  "initialSeedFailure": "Transient Semrush DNS_FAILURE; exited unsuccessfully without fabricating results",
+  "retryOutcome": "Both required sites ingested 15 real posts; Semrush robots crawl-delay of 20 seconds honored",
+  "repeatSeed": {
+    "unchanged": true,
+    "before": {
+      "users": 2,
+      "clients": 2,
+      "pages": 30,
+      "keywords": 150,
+      "snapshots": 54750,
+      "pageIdentity": "1e7fb3659169eb4bd8820e961f268da7",
+      "keywordIdentity": "e01cadd9947214c706292bf9dbac5c1c",
+      "rankValues": "ec97b7938039da02b197bcf16c864dcf"
+    },
+    "after": {
+      "users": 2,
+      "clients": 2,
+      "pages": 30,
+      "keywords": 150,
+      "snapshots": 54750,
+      "pageIdentity": "1e7fb3659169eb4bd8820e961f268da7",
+      "keywordIdentity": "e01cadd9947214c706292bf9dbac5c1c",
+      "rankValues": "ec97b7938039da02b197bcf16c864dcf"
+    }
+  },
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "backendTests": {
+      "passed": 30,
+      "failed": 0,
+      "skipped": 0
+    },
+    "browserTests": {
+      "passed": 20,
+      "failed": 0,
+      "projects": [
+        "desktop Chromium",
+        "mobile Chromium"
+      ]
+    },
+    "composeConfig": "passed",
+    "gitDiffCheck": "passed",
+    "trackedCredentialMarkers": 0,
+    "realEnvTracked": false
+  },
+  "githubHostedCiRun": false
+}

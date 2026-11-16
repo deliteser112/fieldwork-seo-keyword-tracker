@@ -1,0 +1,60 @@
+name: Verify
+on: [push, pull_request]
+jobs:
+  deterministic:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22.19.0, 24]
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: tracker
+          POSTGRES_PASSWORD: ci-local-only
+          POSTGRES_DB: tracker_test
+        ports: ["55439:5432"]
+        options: >-
+          --health-cmd "pg_isready -U tracker -d tracker_test"
+          --health-interval 2s --health-timeout 3s --health-retries 30
+    env:
+      POSTGRES_PASSWORD: ci-local-only
+      POSTGRES_DB: tracker_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run test:delivery
+      - run: npm audit
+      - run: npm run db:generate
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: docker compose config --quiet
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-evidence-${{ matrix.node }}
+          path: test-results/
+
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: docker build --target api -t fieldwork-runtime .
+      - run: npm run test:runtime
+        env:
+          FIELDWORK_RUNTIME_IMAGE: fieldwork-runtime
+      - run: docker build --target web -t fieldwork-web .
+      - run: docker run --rm --add-host api:127.0.0.1 fieldwork-web nginx -t

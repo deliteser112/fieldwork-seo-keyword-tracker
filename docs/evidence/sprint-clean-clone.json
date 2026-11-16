@@ -1,0 +1,225 @@
+{
+  "implementation": "79044bf",
+  "shallowClone": true,
+  "newVolume": true,
+  "seedCommands": 2,
+  "first": {
+    "users": 2,
+    "clients": 2,
+    "pages": 30,
+    "keywords": 150,
+    "snapshots": 54750,
+    "pageIdentity": "de3d9d40446d4d8fb3a416fe08bbfad8",
+    "keywordIdentity": "7c466b1a772945becf558d27075776c3",
+    "rankValues": "6b57ae201d7bd4a4b0753aed643a034a"
+  },
+  "second": {
+    "users": 2,
+    "clients": 2,
+    "pages": 30,
+    "keywords": 150,
+    "snapshots": 54750,
+    "pageIdentity": "de3d9d40446d4d8fb3a416fe08bbfad8",
+    "keywordIdentity": "7c466b1a772945becf558d27075776c3",
+    "rankValues": "6b57ae201d7bd4a4b0753aed643a034a"
+  },
+  "identical": true,
+  "standaloneAcceptanceSelectionMatches": true,
+  "selections": {
+    "https://www.semrush.com": [
+      {
+        "ordinal": 0,
+        "url": "https://www.semrush.com/blog/seo-split-test-result-does-bolded-text-help-your-seo/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 1,
+        "url": "https://www.semrush.com/blog/seo-specialist/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 2,
+        "url": "https://www.semrush.com/blog/facebook-audience-overlap/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 3,
+        "url": "https://www.semrush.com/blog/keyword-research-tools/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 4,
+        "url": "https://www.semrush.com/blog/keyword-bidding/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 5,
+        "url": "https://www.semrush.com/blog/data-driven-marketing/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 6,
+        "url": "https://www.semrush.com/blog/seo-data-science/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 7,
+        "url": "https://www.semrush.com/blog/how-to-find-youtube-influencers/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 8,
+        "url": "https://www.semrush.com/blog/what-is-keyword-analysis/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 9,
+        "url": "https://www.semrush.com/blog/ai-marketing/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 10,
+        "url": "https://www.semrush.com/blog/local-seo-ranking-factors/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 11,
+        "url": "https://www.semrush.com/blog/why-ai-search-is-the-new-reality-for-brands/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 12,
+        "url": "https://www.semrush.com/blog/ai-search-optimization/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 13,
+        "url": "https://www.semrush.com/blog/what-is-ai-marketing/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      },
+      {
+        "ordinal": 14,
+        "url": "https://www.semrush.com/blog/how-to-reply-to-google-reviews/",
+        "sourceSitemap": "https://www.semrush.com/blog/sitemap/"
+      }
+    ],
+    "https://yoast.com": [
+      {
+        "ordinal": 0,
+        "url": "https://yoast.com/how-to-remove-www-from-your-url/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 1,
+        "url": "https://yoast.com/google-analytics-segments-blog/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 2,
+        "url": "https://yoast.com/sequence-segments-google-analytics/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 3,
+        "url": "https://yoast.com/secondary-dimensions-in-google-analytics/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 4,
+        "url": "https://yoast.com/3-exercises-google-analytics-fun/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 5,
+        "url": "https://yoast.com/email-performance-in-google-analytics/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 6,
+        "url": "https://yoast.com/technology-report-in-google-analytics/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 7,
+        "url": "https://yoast.com/google-analytics-dashboards/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 8,
+        "url": "https://yoast.com/online-marketing-tools/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 9,
+        "url": "https://yoast.com/pressing-questions-about-gutenberg-the-new-editor-in-wordpress-5-0/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 10,
+        "url": "https://yoast.com/on-gutenberg-and-wordpress-5-0/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 11,
+        "url": "https://yoast.com/should-you-update-to-wordpress-5-0/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 12,
+        "url": "https://yoast.com/7-reasons-to-come-to-yoastcon/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 13,
+        "url": "https://yoast.com/facebook-traffic-the-current-status/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      },
+      {
+        "ordinal": 14,
+        "url": "https://yoast.com/facebook-changes-make-seo-important/",
+        "sourceSitemap": "https://yoast.com/post-sitemap.xml"
+      }
+    ]
+  },
+  "smoke": {
+    "productionAssets": true,
+    "chromiumVersion": "159.0.8154.6",
+    "api": {
+      "encodedLoginRateLimit": true,
+      "owners": 2,
+      "pagesPerOwner": 15,
+      "crossOwnerDenial": true,
+      "csrfDenial": true,
+      "history": true
+    },
+    "browser": [
+      {
+        "device": "desktop",
+        "pages": 15,
+        "history": true,
+        "accessibilityViolations": 0,
+        "javascriptErrors": 0,
+        "horizontalOverflow": false
+      },
+      {
+        "device": "mobile",
+        "pages": 15,
+        "history": true,
+        "accessibilityViolations": 0,
+        "javascriptErrors": 0,
+        "horizontalOverflow": false
+      }
+    ]
+  },
+  "afterBenchmark": {
+    "users": 2,
+    "clients": 2,
+    "pages": 30,
+    "keywords": 150,
+    "snapshots": 54750,
+    "pageIdentity": "de3d9d40446d4d8fb3a416fe08bbfad8",
+    "keywordIdentity": "7c466b1a772945becf558d27075776c3",
+    "rankValues": "6b57ae201d7bd4a4b0753aed643a034a"
+  },
+  "benchmarkFixturesRemoved": true
+}
